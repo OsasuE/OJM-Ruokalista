@@ -6,7 +6,7 @@ function Poll() {
     const [totalVotes, setTotalVotes] = useState(0);
     const [voted, setVoted] = useState(false);
 
-    const url = "http://localhost:5000/poll";
+    const url = "http://localhost:3000/poll";
     useEffect(() => {
         fetch(url)
             .then((response) => response.json())
