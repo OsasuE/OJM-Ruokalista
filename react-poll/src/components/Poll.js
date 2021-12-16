@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./Poll.css";
+import "../data.json";
 
 function Poll() {
     const [voteData, setVoteData] = useState();
     const [totalVotes, setTotalVotes] = useState(0);
     const [voted, setVoted] = useState(false);
 
-    const url = "http://localhost:5000/poll";
+    const url = "http://localhost:3000/poll";
     useEffect(() => {
         fetch(url)
             .then((response) => response.json())
@@ -54,13 +55,13 @@ function Poll() {
 
     return (
         <div className="poll">
-          <h1>Which option do you like the best?</h1>
-          <ul className={voted ? "results" : "options"}>
-            {pollOptions}
-          </ul>
-          <p>Total Votes: {totalVotes}</p>
+            <h1>Which option do you like the best?</h1>
+            <ul className={voted ? "results" : "options"}>
+                {pollOptions}
+            </ul>
+            <p>Total Votes: {totalVotes}</p>
         </div>
-      );
+    );
 
 }
 
